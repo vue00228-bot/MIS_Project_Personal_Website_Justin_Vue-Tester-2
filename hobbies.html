@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies | Justin Vue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #29353c;
+            --accent-color: #768a96;
+            --text-color: #29353c;
+            --background-color: #FFFFFF;
+            --gradient-start: #aac7d8;
+            --gradient-end: #768a96;
+            --secondary-color: #44576d;
+            --light-accent: #aac7d8;
+            --card-bg: #e6e6e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .hobby-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(41, 53, 60, 0.2);
+            border: 2px solid var(--light-accent);
+        }
+
+        .hobby-item h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hobby-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hobby-photo {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--light-accent);
+            box-shadow: 0 4px 10px rgba(41, 53, 60, 0.2);
+            margin-top: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hobby-item {
+                padding: 1.5rem;
+            }
+
+            .hobby-item h2 {
+                font-size: 1.5rem;
+            }
+
+            .hobby-item h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .hobby-photo {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .hobby-item {
+                padding: 1rem;
+            }
+
+            .hobby-item h2 {
+                font-size: 1.2rem;
+            }
+
+            .hobby-item h3 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <h1>My Hobbies</h1>
+        
+        <div class="hobby-item">
+            <h2>📸 Photography</h2>
+            <p>I enjoy photography because it allows me to express creativity and capture meaningful moments. Whether it's nature, people, or city life, I like finding new perspectives and using photos to tell a story. Taking pictures helps me slow down, notice details, and appreciate everyday beauty.</p>
+            
+            <h3>Personal Story</h3>
+            <p>I enjoy photography because it allows me to capture meaningful moments and express creativity. One of my favorite experiences was taking photos for HACC's (Hmong and Asian Culture Club) biggest event. I didn't think much of it at the time and sent the photos to the club president. About a week later, one of the performers approached me to thank me for photographing her and her dance crew. That moment really meant a lot to me and showed me how something as simple as taking a photo can make a positive impact on others.</p>
+            
+            <div style="text-align: center;">
+                <img src="./media/Photography_1.JPEG" alt="Photography" class="hobby-photo">
+                <img src="./media/photography_2.jpg" alt="Photography" class="hobby-photo">
+                <img src="./media/photography_3.jpg" alt="Photography" class="hobby-photo">
+            </div>
+        </div>
+        
+        <div class="hobby-item">
+            <h2>🏐 Volleyball</h2>
+            <p>Playing volleyball is one of my favorite ways to stay active and competitive. I enjoy the teamwork, quick decision-making, and energy of each match, especially the challenge of scoring points and improving my skills. It's a great way to build focus, coordination, and stay connected with others through a shared passion for the game.</p>
+            
+            <h3>Personal Story</h3>
+            <p>Volleyball has been a big part of my life because it helps me stay active and connect with people. I was introduced to it by friends and, at first, it was just a way to stay connected since I had never played before. Over time, it has become a way for me to meet new people and enjoy the challenge and excitement of the game. It's important to me because it combines physical activity with social connection, making it both fun and meaningful.</p>
+            
+            <div style="text-align: center;">
+                <img src="./media/volleyball_1.JPG" alt="Volleyball" class="hobby-photo">
+                <img src="./media/volleyball_2.JPG" alt="Volleyball" class="hobby-photo">
+                <img src="./media/volleyball_3.JPG" alt="Volleyball" class="hobby-photo">
+                <img src="./media/volleyball_4.JPG" alt="Volleyball" class="hobby-photo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

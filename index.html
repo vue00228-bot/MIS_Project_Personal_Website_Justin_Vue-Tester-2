@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Modern Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #29353c;
+            --accent-color: #768a96;
+            --text-color: #29353c;
+            --background-color: #FFFFFF;
+            --gradient-start: #aac7d8;
+            --gradient-end: #768a96;
+            --secondary-color: #44576d;
+            --light-accent: #aac7d8;
+            --card-bg: #e6e6e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            padding: 0.6rem 1rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 160px;
+            box-shadow: 0 10px 30px rgba(41, 53, 60, 0.2);
+            border-radius: 10px;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: var(--primary-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover { background-color: var(--light-accent); color: var(--primary-color); }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: var(--background-color);
+        }
+
+        .welcome-card {
+            background: var(--card-bg);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(41, 53, 60, 0.2);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            border: 2px solid var(--light-accent);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--light-accent);
+            box-shadow: 0 4px 10px rgba(41, 53, 60, 0.2);
+        }
+
+        .hobbies-section {
+            margin-top: 2rem;
+        }
+
+        .hobby-item {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .hobby-item h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .hobby-photo {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--light-accent);
+            box-shadow: 0 4px 10px rgba(41, 53, 60, 0.2);
+            margin-top: 1rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(9, 132, 227, 0.2);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .audio-player {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .welcome-card {
+                padding: 1.5rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .social-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hobbies-section {
+                margin-top: 1rem;
+            }
+
+            .hobby-item h2 {
+                font-size: 1.5rem;
+            }
+
+            .hobby-photo {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-card {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .social-links a {
+                font-size: 1.2rem;
+                margin: 0 0.5rem;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #29353c;
+                --text-color: #dfebf6;
+            }
+
+            .welcome-card {
+                background: #44576d;
+            }
+
+            p {
+                color: #dfebf6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-card">
+            <div class="nav">
+                <div class="dropdown">
+                    <button class="dropbtn">Games</button>
+                    <div class="dropdown-content">
+                        <a href="gamepage.html">Hangman</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">Hello and Welcome!</h1>
+                <p style="font-size: 1.5rem; color: var(--accent-color);">Welcome to My Page</p>
+            </div>
+            <div class="profile-section">
+                <img src="./media/Professional_Headshot.JPG" alt="Justin Vue" class="profile-photo">
+                <div>
+                    <h1>Justin Vue</h1>
+                    <p style="font-size: 1rem; margin: 0;">Finance Major | Retail Associate</p>
+                </div>
+            </div>
+            <p style="text-align: left;">I'm Justin Vue, a Retail Associate with about two years of experience in customer service and sales. I'm currently pursuing a Finance major in college, with the goal of owning my own business one day.</p>
+            
+            <div class="audio-player">
+                <audio src="./media/welcome_video_1.mp4" controls></audio>
+            </div>
+            
+            <div class="hobbies-section">
+                <div class="hobby-item">
+                    <h2>📸 Photography</h2>
+                    <p>I like taking photos and capturing interesting moments.</p>
+                    <img src="./media/Photography_1.JPEG" alt="Photography" class="hobby-photo">
+                </div>
+                <div class="hobby-item">
+                    <h2>🏐 Volleyball</h2>
+                    <p>I enjoy playing volleyball and scoring points during games.</p>
+                    <img src="./media/volleyball_1.JPG" alt="Volleyball" class="hobby-photo">
+                </div>
+            </div>
+            
+            <div>
+                <a href="hobbies.html" class="cta-button">Hobbies Page</a>
+                <a href="discover.html" class="cta-button">Discover Page</a>
+                <a href="career.html" class="cta-button">Career Interests</a>
+                <a href="resume.html" class="cta-button">View Resume</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/vue00228-bot" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/justin-vue-674020381/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/vue_justin_06/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Modern Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #29353c;
+            --accent-color: #768a96;
+            --text-color: #29353c;
+            --background-color: #FFFFFF;
+            --gradient-start: #aac7d8;
+            --gradient-end: #768a96;
+            --secondary-color: #44576d;
+            --light-accent: #aac7d8;
+            --card-bg: #e6e6e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(41, 53, 60, 0.2);
+            animation: fadeIn 1s ease-out;
+            border: 2px solid var(--light-accent);
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .resume-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(41, 53, 60, 0.2);
+            animation: fadeIn 1s ease-out;
+            border: 2px solid var(--light-accent);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--gradient-start);
+            padding-bottom: 0.5rem;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills list (plain bullets) */
+        .resume-section ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+        .resume-section ul li {
+            background: none;
+            color: inherit;
+            padding: 0.2rem 0;
+            border-radius: 0;
+            text-align: left;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 1rem 0;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 1rem 0.5rem;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #29353c;
+                --text-color: #dfebf6;
+                --card-bg: #44576d;
+            }
+
+            .resume-header, .resume-section {
+                background: #44576d;
+            }
+
+            .experience-item p, .education-item p {
+                color: #dfebf6;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .resume-header, .resume-section {
+                padding: 1.5rem;
+            }
+
+            .button-container {
+                flex-direction: column;
+            }
+
+            .back-button, .download-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            ul {
+                padding-left: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .resume-header, .resume-section {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <a href="https://docs.google.com/document/d/1V8EHzL-v5VRRHzC7xnQIwhVhx2RWf8ok8Pw6hbxSHN0/edit?usp=sharing" target="_blank" class="download-button"><i class="fas fa-download"></i> Download Resume</a>
+        </div>
+        
+        <div class="resume-header">
+            <h1>Justin Vue</h1>
+            <p>📧 YeejHuamVue6@gmail.com | 📞 612-868-9751</p>
+            <p>🏠 8239 144th Ave, Forest Lake, MN 55025</p>
+        </div>
+
+        <section class="resume-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Reliable and motivated college student with hands-on experience in customer service and food service operations. Quick learner with strong communication skills and a focus on efficiency, teamwork, and attention to detail. Eager to grow professionally and contribute positively to any team.</p>
+        </section>
+
+        <section class="resume-section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Walmart – OPD Associate</h3>
+                <div class="date">Forest Lake, MN | Sept 2023 – July 2024</div>
+                <ul>
+                    <li>Handled over 1,000 online orders with speed and accuracy.</li>
+                    <li>Worked with leads to fix item shortages and product issues.</li>
+                    <li>Focused on fast, accurate order prep to keep customers happy.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Chipotle – Crew Member</h3>
+                <div class="date">Forest Lake, MN | Mar 2023 – Sept 2023</div>
+                <ul>
+                    <li>Prepared food and ensured quality during peak times.</li>
+                    <li>Helped manage supplies and worked closely with team members.</li>
+                    <li>Kept work areas clean and followed safety standards.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>UMD Dining Services – Student Worker</h3>
+                <div class="date">Duluth, MN | Feb 2025 – May 2025</div>
+                <ul>
+                    <li>Supported kitchen staff with food prep and cleanup.</li>
+                    <li>Greeted and served students while keeping service fast and friendly.</li>
+                    <li>Followed all safety and sanitation procedures.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <h3>University of Minnesota Duluth</h3>
+                <div class="date">Enrolled since August 2024</div>
+            </div>
+
+            <div class="education-item">
+                <h3>Forest Lake Area High School</h3>
+                <div class="date">Forest Lake, MN | Sept 2020 – June 2024</div>
+                <p>High School Diploma | GPA: 3.0+</p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2 class="section-title">Skills</h2>
+            <ul>
+                <li>Work Ethic: Fast and efficient, focused on getting the job done right.</li>
+                <li>Team Communication: Keeps operations smooth with clear coordination.</li>
+                <li>Attention to Detail: Ensures food, orders, and spaces meet standards.</li>
+                <li>Time Management: Stays calm and productive during busy hours.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover | Justin Vue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #29353c;
+            --accent-color: #768a96;
+            --text-color: #29353c;
+            --background-color: #FFFFFF;
+            --gradient-start: #aac7d8;
+            --gradient-end: #768a96;
+            --secondary-color: #44576d;
+            --light-accent: #aac7d8;
+            --card-bg: #e6e6e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .discover-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(41, 53, 60, 0.2);
+            border: 2px solid var(--light-accent);
+        }
+
+        .discover-item h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            line-height: 1.8;
+        }
+
+        .video-container {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid var(--light-accent);
+            box-shadow: 0 4px 10px rgba(41, 53, 60, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .discover-item {
+                padding: 1.5rem;
+            }
+
+            .discover-item h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .discover-item {
+                padding: 1rem;
+            }
+
+            .discover-item h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <h1>Discover</h1>
+        
+        <div class="discover-item">
+            <h2>About Me</h2>
+            <p>I'm Justin Vue, a Retail Associate with about two years of experience in customer service and sales. I'm currently pursuing a Finance major in college, with the goal of owning my own business one day.</p>
+        </div>
+        
+        <div class="discover-item">
+            <h2>My Journey</h2>
+            <p>From working at Chipotle to Walmart and now UMD Dining Services, I've learned the importance of teamwork, efficiency, and attention to detail. Each role has taught me valuable skills about customer service and operations management.</p>
+        </div>
+        
+        <div class="discover-item">
+            <h2>Goals</h2>
+            <p>My ultimate goal is to own my own business. I'm building my skills in finance and business management to make this dream a reality. I believe in continuous learning and hard work.</p>
+        </div>
+
+        <div class="discover-item">
+            <h2>Why I Chose UMD</h2>
+            <p>I chose the University of Minnesota Duluth because it's close enough to home to stay connected with family, yet far enough to experience independence. Originally, I was interested in their Civil Engineering program, but even though I'm no longer pursuing that path, I've grown to appreciate the scenery and the welcoming community on campus.</p>
+        </div>
+
+        <div class="discover-item">
+            <h2>What I Like About Duluth and the Surrounding Area</h2>
+            <p>I really enjoy the natural beauty and scenic views around Duluth. The combination of lakes, forests, and outdoor spaces makes it a great place to explore and relax.</p>
+        </div>
+
+        <div class="discover-item">
+            <h2>Personal Experiences and Campus Highlights</h2>
+            <p>One of my favorite experiences at UMD was emceeing for HLUB's Hmong New Year and Heritage Night events. Being part of these celebrations allowed me to connect with the community, celebrate my culture, and take on a leadership role on campus.</p>
+            <div class="video-container">
+                <video src="./media/MIS.mp4" controls></video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
